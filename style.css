@@ -1,0 +1,137 @@
+body {
+    font-family: 'Rubik', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(to top, #1799f9, #468de3, #5881cc, #6176b6, #646ca1, #5e6296, #57578b, #514d80, #453f7c, #383077, #2c2172, #1e106c);
+}
+
+.sunlist {
+    text-align: center;
+}
+
+.sunlist h2 {
+    margin-bottom: 60px;
+    color: white;
+    font-size: 44px;
+    font-weight: bold;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+.spinner {
+    perspective: 1000px;
+    -webkit-perspective: 1000px;
+}
+
+.spinner .container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+	animation: sunpulse 1.8s alternate infinite;
+}
+
+.spinner .circle,
+    .spinner .line {
+        border-radius: 50%;
+    }
+
+.spinner .circle {
+    position: relative;
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    width: 360px;
+    height: 360px;
+    z-index: 1;
+}
+
+.spinner .line {
+    display: block;
+    position: absolute;
+    top: -5px;
+    right: 0;
+    bottom: 0;
+    left: -5px;
+    border: 3px solid rgba(255,255,255, .3);
+}
+
+.spinner .list {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    z-index: 2;
+    max-height: 360px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+    transform: rotateZ(-45deg) scale(1.1) rotateY(25deg); /* Наклоняем весь список */
+    text-align: center;
+    list-style: none;
+    border-radius: 50%;
+}
+
+.spinner .list::-webkit-scrollbar {
+    display: none; /* Chrome, Safari */
+}
+.list .list-item {
+    font-size: 18px;
+    color: #Fff;
+    font-weight: bold;
+    padding: 30px 0;
+    transform: rotateZ(45deg);
+    
+    /* Контур вокруг текста */
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+    transition: .2s;
+}
+.list .list-item span {
+    font-size: 14px;
+}
+.list .list-item:hover {
+    color: #FDFF1A;
+}
+.scale-container {
+    transition: transform 0.3s ease;
+}
+
+.list-item .item-container {
+    position: relative;
+    max-width: 60%;
+    padding: 20px 10px;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    border-radius: 15px;
+    background-size: 100%; /* или другие значения, которые вы выберете */
+    background-repeat: no-repeat;
+    background-position: center; 
+    text-align: left;
+}
+.list-item .item-container::before {
+    position: absolute;
+    content: '';
+    top: 6px;
+    left: 6px;
+    right: -6px;
+    bottom: -6px;
+    background-image: linear-gradient(to left bottom, #000000, #12090b, #1d1112, #261617, #311a1b, #371b1c, #3e1b1c, #441c1c, #481818, #4b1414, #4f0f10, #520909);
+    z-index: -1;
+    border-radius: 25px;
+    box-shadow: 2px 2px 6px 0px rgba(0,0,0,0.5);
+    transition: 0.2s;
+}
+
+@keyframes sunpulse {
+	from {
+		box-shadow: 0 0 350px #FCEE21, 0 0 100px #FCEE21;
+	}
+	to {
+		box-shadow: 0 0 150px #FCEE21, 0 0 75px #FCEE21;
+	}
+}
