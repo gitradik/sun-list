@@ -129,9 +129,9 @@ body {
 
 @keyframes sunpulse {
 	from {
-		box-shadow: 0 0 350px #FCEE21, 0 0 100px #FCEE21;
+		box-shadow: 0 20px 120px #FCEE21, 0 0 100px #FCEE21;
 	}
 	to {
-		box-shadow: 0 0 150px #FCEE21, 0 0 75px #FCEE21;
+		box-shadow: 0 5px 30px #FCEE21, 0 0 75px #FCEE21;
 	}
 }
